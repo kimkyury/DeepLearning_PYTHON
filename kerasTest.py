@@ -18,13 +18,13 @@ model = Sequential()
 model.add(Dense(1, input_dim=1, activation='linear'))
 
 print("ok")
-#모델 컴파일(중요)
+# 모델 컴파일(중요)
 # 최적화를 어떤 버퍼로 할 것인지, lr=0;01은 파이퍼파나미터(초매개변수)
 sgd =optimizers.SGD(lr=0.01)
 #optimizer=최적화 방법, loss:중요한 거임. metrics:평가기준
 model.compile(optimizer='sgd', loss='mse', metrics=['accuracy'])
 
-#모델 학습
+# 모델 학습
 # batch_size=(데이터셋의 데이터묶음, 행의개수), epochs = 데이터셋 전체에 대한 학습 수, shuffle = 현재 데이터 셋을 섞을지
 model.fit(NumOfLegs, Speed, batch_size=1, epochs=10, shuffle=False)
 
